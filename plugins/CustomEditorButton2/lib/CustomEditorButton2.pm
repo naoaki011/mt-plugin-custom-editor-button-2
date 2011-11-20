@@ -26,9 +26,9 @@ sub build_buttons {
             $btns{$btn_id}->{face} = $btn->{face_text};
         }
     }
-    my $btn_json = objToJson(\%btns);
+    my $btn_json = to_json(\%btns);
     my $order = get_order($app, $btns);
-    my $order_json = objToJson($order);
+    my $order_json = to_json($order);
     return "\n$code\nvar BTNS = $btn_json\nvar BTN_ORDER = $order_json\n";
 }
 
